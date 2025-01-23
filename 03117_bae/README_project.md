@@ -26,13 +26,12 @@
 
 
 
-## 내용
-### 1. 가상환경 생성
-
-### 2. OpenCV 라이브러리 설치
-
-### 3. Webcam 열기
-### 4. Webcam 영상 저장
+## 목차 및 내용
+### [chapter 1 : 가상환경 생성](docs/chap01_venv.md)
+### [chapter 2 : OpenCV 라이브러리 설치](docs/chap02_opecv.md)
+### [chapter 3 : Webcam 열기](src/webcam_start.py)
+![alt text](docs/img/image-7.png)
+### [chapter 4 : Webcam 영상 저장](src/webcam_add_save.py)
 ### 5. 이미지내 선 및 도형 그리기 및 글자 입력(OpenCV 심화)
 
 ### 6. 딥러닝 알고리즘 사용을 위한 cuda 설치 및 환경 셋팅
