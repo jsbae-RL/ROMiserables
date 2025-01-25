@@ -39,14 +39,17 @@ move = {
     'B':(0,-1),
     'T':(0,1),
     'RT':(1,1),
-    'LT': (-1,1),
-    'RB': (1,-1),
+    'LT':(-1,1),
+    'RB':(1,-1),
     'LB':(-1,-1)
 }
 chessboard_n2a = {1:'A', 2:'B', 3:'C', 4:'D', 5:'E', 6:'F', 7:'G', 8:'H'}   # 좌표 계산으로 움직인 후 체스 위치로 변환하기 위한 딕셔너리
 chessboard_a2n = {val:key for key, val in chessboard_n2a.items()}           # 초기 위치를 받았을때 좌표로 변환하기 위한 딕셔너리리
 
 class Chessmen:
+    '''
+    체스말 클래스
+    '''
     def __init__(self, initial):                        # 초기 위치(문자열)를 받아서 숫자로 변환 후 리스트에 저장장
         self.now = []
         self.now.append(chessboard_a2n[initial[0]])
@@ -75,7 +78,7 @@ n = int(first[2])                   # 반복횟수 숫자로 저장장
 def move_chessman(cmd):             # 킹 이동 및 돌과 겹치면 돌 이동, 체스판을 넘어가면면 다시 원래 자리로 돌아가게 하는 함수
     king_next = king.move(cmd)      # 킹 이동동
     if king_next == False:          # 킹 이동이 체스판 범위를 넘음
-        king.move_back()            # 킹 움직임 번복
+        king.move_back(cmd)            # 킹 움직임 번복
         return                      # 함수 나가서 다음 반복문으로
     
     if king.now == dol.now:         # 킹과 돌의 위치가 같다

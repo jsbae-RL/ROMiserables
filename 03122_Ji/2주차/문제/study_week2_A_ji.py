@@ -24,3 +24,5 @@ def solution(s):
     
 s = 'a1234'
 print(solution(s))
+
+# if 문 층이 많을수록 안좋다
