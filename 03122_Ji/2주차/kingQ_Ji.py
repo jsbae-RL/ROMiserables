@@ -64,6 +64,7 @@ class Chessmen:
             self.now[i] += move[moving_cmd][i]
             if self.now[i] > 8 or self.now[i] < 1:      # 체스판의 범위를 넘으면 False 반환환
                 return False
+        return True
             
     def move_back(self, moving_cmd):                    # 커맨드 반대로 되돌아가는 함수
         for i in range(2):
@@ -78,10 +79,8 @@ n = int(first[2])                   # 반복횟수 숫자로 저장장
 def move_chessman(cmd):             # 킹 이동 및 돌과 겹치면 돌 이동, 체스판을 넘어가면면 다시 원래 자리로 돌아가게 하는 함수
     king_next = king.move(cmd)      # 킹 이동동
     if king_next == False:          # 킹 이동이 체스판 범위를 넘음
-        king.move_back(cmd)            # 킹 움직임 번복
-        return                      # 함수 나가서 다음 반복문으로
-    
-    if king.now == dol.now:         # 킹과 돌의 위치가 같다
+        king.move_back(cmd)            # 킹 움직임 번복                  
+    elif king.now == dol.now:         # 킹과 돌의 위치가 같다
         dol_next = dol.move(cmd)    # 돌을 킹이 움직인 방향으로 움직임
         if dol_next == False:       # 돌이 체스판 벗어남
             king.move_back(cmd)     # 킹과 돌 원래 자리로 돌아감
