@@ -1,7 +1,7 @@
 import os
 
 # 파일 경로 설정
-FILE_PATH = "C:/ROKEY/ROMiserables/ROMiserables/03151_minsuje/hw/week2(py)/study_2week_kimQ/src/account.txt"
+FILE_PATH = "C:/ROKEY/ROMiserables/ROMiserables/03151_minsuje/hw/week2(p)/study_2week_kimQ/src/account.txt"
 #읽기
 def read_accounts():
     '''txt파일 내용 읽기'''

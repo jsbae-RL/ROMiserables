@@ -83,7 +83,6 @@ class ImportRoad():
 
         # 선언된 값 자체가 변경되면안됨. queue의 역활로서 삭제되거나 추가될 순 있어도 들어온 값 자체가 수정 되어서는 안됨  
         location_info =  [(0,1)] #시간, 지역 변수 초기화 최초엔 1번 위치에서 0시간소모 경로는 1만 통과 했으므로
-        
         #queue 역할을 하는 locationvector의 요소가 없을때 while문은 실행되지 않는다.
         while location_info:
             #location_info에서 가장 작은 누적 시간 찾기
@@ -94,7 +93,6 @@ class ImportRoad():
             #가장 작은 누적 시간을 가진 튜플을 현재 시간과 현재 지점으로 저장하고 큐에서 제거
             current_time , current_location = location_info.pop(min_index_num)  #pop은 내장 함수로 해당 인덱스의 값을 리턴하고 변수 내부에서 해당 인덱스 삭제를 함.
             # 만약 self.shortest_time[curret_location]에 저장된 값이 current_time보다 작으면 아래 동작을 수행 할 필요가 없음
-            # 같은 경우는 다른 경로 일 수도 있으니 할 이유는 있음.
             if(current_time>shortest_time[current_location]):
                 continue
             

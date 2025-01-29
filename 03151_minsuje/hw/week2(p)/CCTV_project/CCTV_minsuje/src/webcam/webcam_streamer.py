@@ -1,7 +1,8 @@
 import cv2              #opencv
 import threading        #thread 분할 (webcam streamming 중에 반복문으로 프레임을 읽어와서 보여줘야하는데 다른작업도 해야해서 들고옴)
+os sys
 
-#from src.recorder.video_player import VideoRecorder
+from recorder.video_player import VideoRecorder
 
 class WebCamStreamer():
     def __init__(self,cam_num=0):   # 노트북은 캠이 기본 탑재 되어있어서 그냥 아무것도 선택안하면 노트북 웹캠 자체그대로로
