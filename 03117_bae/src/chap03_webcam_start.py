@@ -28,12 +28,12 @@ while True:
     # 읽어낸 frame을 출력
     cv2.imshow('frame', frame)
 
-    # while문을 벗어날 이벤트를 생성
+    # while문을 벗어날 이벤트를 생성 10ms
     # 키보드의 q를 입력할시 quit를 터미널에 출력하고 반복문을 break
-    if cv2.waitKey(10) == ord('q'):
+    if cv2.waitKey(10) & 0xFF == ord('q'):
         print('quit')
-        break
+        break   
 
-# 최종 메모리 정리
-cap.release()
+# 최종 메모리 정리        00001100 out
+cap.release()     
 cv2.destroyAllWindows()
