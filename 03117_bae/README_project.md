@@ -36,7 +36,7 @@
 ### [chapter 5 : 이미지내 선 및 도형 그리기 및 글자 입력(OpenCV 심화)](src/chap05_using_opencv.ipynb)
 <center><img src = "docs/img/cv2_result.png" width = "50%" height = "50%"/></center>
 
-### 6. 딥러닝 알고리즘 사용을 위한 cuda 설치 및 환경 셋팅
+### [chapter 6 : 딥러닝 알고리즘 사용을 위한 cuda 설치 및 환경 셋팅](docs/chap06_cuda_install.md)
 
 ### 7. webcam 영상에 딥러닝 알고리즘 적용
 
