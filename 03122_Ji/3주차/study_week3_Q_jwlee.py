@@ -10,3 +10,14 @@
 # [[1,2],[2,3]]	       [[3,4],[5,6]]	[[4,6],[7,9]]
 # [[1],[2]]	           [[3],[4]]	    [[4],[6]]
 
+def solution(arr1,arr2):
+    answer = []
+    for i in range(len(arr1)):
+        add_arr = list(map(lambda x,y: x+y,arr1[i],arr2[i]))
+        answer.append(add_arr)
+    return answer
+
+arr1 = [[1,2,3],[2,3,4]]
+arr2 = [[1,2,3],[2,3,4]]
+print(solution(arr1,arr2))
+

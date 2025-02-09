@@ -92,5 +92,4 @@ for i in range(n):                  # 입력받은 수만큼 킹 이동 함수 �
     moving_cmd = input()            # 반복하는 횟수만큼 커맨드 입력받음
     move_chessman(moving_cmd)
     
-print(f'킹의 마지막 위치: {king.where()}')
-print(f'돌의 마지막 위치: {dol.where()}')
+print(king.where(),dol.where())
