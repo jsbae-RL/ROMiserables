@@ -11,6 +11,15 @@ def solution(arr):
         stack.append(num)       # 스택비었으면
     return result
     
+
+# def solution(arr):
+#     result = [arr[0]]
+#     for num in arr[1:]:
+#         if result[-1] != num:
+#             result.append(num)
+#     return result
+
+
 arr=[1,1,3,3,0,1,1]     # [1,3,0,1]
 print(solution(arr))
 

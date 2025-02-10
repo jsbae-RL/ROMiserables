@@ -27,7 +27,21 @@ arr2 = [[3, 4], [5, 6]]
 
 print(solution(arr1, arr2))
 
+print('----')
 
+import numpy as np
+
+def solution(arr1, arr2):
+    
+    result = np.add(arr1, arr2)
+    return list(result) 
+
+arr1 = [[1, 2], [2, 3]]
+arr2 = [[3, 4], [5, 6]]
+
+print(solution(arr1, arr2))
+
+print('----')
 
 # 2. lambda 와 map 함수를 사용(gpt 활용)
 def solution(arr1, arr2):
@@ -41,8 +55,23 @@ arr2 = [[3, 4], [5, 6]]
 print(solution(arr1, arr2))  # 출력: [[4, 6], [7, 9]]
 
 
+print('----')
 
 #      3. 3차원배열 (구현 실패)
+
+# import numpy as np
+
+# def solution(arr1, arr2):
+    
+#     result = np.add(arr1, arr2)
+#     return list(result) 
+
+
+# arr1 = [[[1, 2], [2, 3]], [[1], [2]]]
+# arr2 = [[[3, 4], [5, 6]], [[3], [4]]]
+
+# print(solution(arr1, arr2))
+
 
 # def solution(arr1, arr2):
 #     result = []
