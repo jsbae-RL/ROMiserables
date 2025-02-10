@@ -24,7 +24,7 @@ class ChessBoard:
         self.commands = commands
         # 초기화 후 내부에서 바로 결과 내는게 더 맞다고 생각들어서함.
         self.move()
-    
+        
     def pos_to_index(self, pos):
         ''' 
         문자열 위치를 좌표 평면으로 변환
