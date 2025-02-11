@@ -10,14 +10,14 @@ def solution(numbers, target):
             if sum == target:
                 count += 1
         else:
-           
-            # + 연산 경우
-            plus = sum + numbers[index]
-            stack.append((index + 1, plus))
-            
+
             # - 연산 경우
             minus = sum - numbers[index]
             stack.append((index + 1, minus))
+            
+            # + 연산 경우
+            plus = sum + numbers[index]
+            stack.append((index + 1, plus))
             print(stack)
     
     return count
