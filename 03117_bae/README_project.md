@@ -38,12 +38,14 @@
 
 ### [chapter 6 : 딥러닝 알고리즘 사용을 위한 cuda 설치 및 환경 셋팅](docs/chap06_cuda_install.md)
 
-### [chatter 7 : webcam 영상에 딥러닝 알고리즘 적용](docs/chap07_deepleaning_frame.md)
-#### [소스코드 : ](src/chap07_cam_yolov11.py)
+### [chapter 7 : webcam 영상에 딥러닝 알고리즘 적용](docs/chap07_deepleaning_frame.md)
+#### [소스코드](src/chap07_cam_yolov11.py)
 
-### 8. tracking 알고리즘 적용
+### [chapter 8 : tracking 알고리즘 적용](docs/chap08_object_tracking.md)
+#### [소스코드 1](src/chap08_yolov11_track.py)
+#### [소스코드 2](src/chap08_yolov11_track_2.py)
 
-### 9. people counting 알고리즘 적용
+### [chapter 9 : people counting 알고리즘 적용](src/chap09_tracking_counting.py)
 
 ### [APPENDIX 1 : CUDA 삭제](docs/appendics01.md)
 
