@@ -1,0 +1,5 @@
+def solution(s):
+    str1=s.split(" ")
+    for i in range(len(str1)):
+        str1[i]=str1[i].capitalize()    #to upper first word of sentence, else lower
+    return ''.join(str1)

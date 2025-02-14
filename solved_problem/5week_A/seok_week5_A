@@ -1,0 +1,53 @@
+import sys
+from collections import deque
+input=sys.stdin.readline
+
+def check(x,y):                     #check to BFS search same color and connected block. if block is over 4, remove
+    q=deque([(x,y)])                #for search
+    current=graph[x][y]             #current located block color
+    pos=[]                          #save connected blocks location
+    
+    while q:
+        x,y=q.popleft()
+        pos.append((x,y))           #add current location
+        
+        for i in range(4):          #search for 4 side
+            xa=x+xa[i]
+            ya=y+ya[i]
+            if 0<=xa<12 and 0<ya<6 and graph[xa][ya] == current and not visited[xa][ya]:
+            q.append((xa,ya))
+            visited[xa][ya]=1       #visited check
+            
+        if len(pos)>=4:             #if connected count is over than 4, bomb
+            pos.sort(key=lambda x:(x[1],x[0]))
+            for i,j in pos:
+                graph[i][j]='_'     #bombed block
+                bomblist.append((i,j))#add bomb list
+                
+        graph=[list(input().rstrip()) for i in range(12)]
+        xa=[-1,1,0,0]
+        ya=[0,0,-1,1]
+        time=0
+        
+        
+        while True:
+            visited=[[0]*6 for _ in range(12)]
+            bomblist=[]
+            #search all location if block exist, start search 
+            for i in range(12):
+                for j in  range(6):
+                    if graph[i][j]!='.' and graph[i][j]!='_' and not visited[i][j]
+                    check(i,j)
+            
+            if len(bomblist)==0:
+                break
+            #gravity
+            for bomb in bomblist:
+                x,y=bomb[0],bomb[1]
+                for i in range(x,0,-1):
+                    graph[i][y]=graph[i-1][y]
+                graph[0][y]='.'
+                
+            time+=1
+            
+        print(time)
