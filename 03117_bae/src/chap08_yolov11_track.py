@@ -29,10 +29,11 @@ while cap.isOpened():
 
     if success:
         # YOLO11을 사용하여 객체 추적 수행 (프레임 간 지속적으로 추적)
+        # classes = 0 : 사람만 탐지
         results = model.track(frame, persist=True, classes = 0, tracker = 'bytetrack.yaml')
 
         # 객체 박스와 트랙 ID 가져오기
-        boxes = results[0].boxes.xyxy.cpu()  # 객체 경계 박스 좌표 (x, y, w, h)
+        boxes = results[0].boxes.xyxy.cpu()  # 객체 경계 박스 좌표# 좌상단 xy좌표, 우하단 xy좌표
         track_ids = results[0].boxes.id.int().cpu().tolist()  # 객체 ID 리스트
 
         # YOLO 결과를 시각적으로 표시한 프레임 가져오기

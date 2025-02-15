@@ -27,10 +27,11 @@ roi = (400, 500, 650, 750)  # ROI 영역 (사각형 좌상단 (x1, y1), 우하�
 while cap.isOpened():
     success, frame = cap.read()
     if success:
-        results = model.track(frame, persist=True)
+        results = model.track(frame, persist=True,  classes = 0, tracker = 'bytetrack.yaml')
+        print(results[0].boxes)
         
         # 감지된 객체의 박스 및 트랙 ID 가져오기
-        boxes = results[0].boxes.xywh.cpu()
+        boxes = results[0].boxes.xywh.cpu() # 객체의 중심좌표(xy) 너비 높이
         track_ids = results[0].boxes.id.int().cpu().tolist()
 
         # 프레임에 결과 시각화
@@ -40,12 +41,13 @@ while cap.isOpened():
         cv2.rectangle(annotated_frame, (roi[0], roi[1]), (roi[2], roi[3]), (0, 255, 0), 2)
 
         count_in_roi = 0
-        
+
         # 감지된 객체 처리
         for box, track_id in zip(boxes, track_ids):
             x, y, w, h = box
             track = track_history[track_id]
             track.append((float(x), float(y)))  # 객체 중심 좌표 추가
+            print(track)
             if len(track) > 30:
                 track.pop(0)
 
@@ -92,7 +94,7 @@ while cap.isOpened():
         out.write(annotated_frame)
 
         # 'q' 키를 누르면 루프 종료
-        if cv2.waitKey(1) & 0xFF == ord("q"):
+        if cv2.waitKey(0) & 0xFF == ord("q"):
             break
     else:
         break
