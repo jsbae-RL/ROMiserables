@@ -83,3 +83,6 @@ def solution(answers):
 
     
 print(solution([1,2,3,4,5]))
+
+
+# pop 을 하면 시간 복잡도가 높아진다.

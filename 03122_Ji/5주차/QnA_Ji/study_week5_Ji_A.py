@@ -32,3 +32,9 @@ def solution(s):
     # 이를 반복해서 answer에 계속 저장함 (answer에 문자가 계속 쌓임)
     
     return answer
+
+# title() : 맨앞이 숫자면 그다음 맨앞이 대문자 나머지 소문자자)
+# capitalize()
+
+# split()
+# ' '.join
