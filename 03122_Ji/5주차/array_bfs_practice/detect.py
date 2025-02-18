@@ -1,5 +1,5 @@
 import numpy as np
-# from collections import deque
+from collections import deque
 
 map_design = np.array([
     [  2,  0,  0,  0,  0,  0,  0,  0,  0,  0],
