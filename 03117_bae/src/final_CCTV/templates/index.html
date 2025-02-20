@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 문서의 문자 인코딩을 UTF-8로 설정 (한글 및 다양한 문자 지원) -->
+    <meta charset="UTF-8">
+    
+    <!-- 반응형 웹을 위한 뷰포트 설정 (모바일 및 다양한 화면 크기에 대응) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 웹페이지 제목 설정 -->
+    <title>YOLO11 Webcam Tracking</title>
+    
+    <script>
+        // 캡처 버튼 클릭 시 실행되는 함수
+        function captureImage() {
+            // '/capture' 엔드포인트로 POST 요청을 보냄
+            fetch('/capture', { method: 'POST' })
+            .then(response => response.json()) // 응답을 JSON 형식으로 변환
+            .then(data => {
+                // 응답 데이터에 'path' 값이 있으면 캡처 성공 메시지 출력
+                if (data.path) {
+                    alert("캡처가 성공적으로 저장되었습니다!");
+                } else {
+                    alert("캡처에 실패했습니다.");
+                }
+            })
+            .catch(error => console.error('에러 발생:', error)); // 오류 발생 시 콘솔에 출력
+        }
+    </script>
+</head>
+<body>
+    <h1>YOLO11 웹캠 추적 시스템</h1>
+    
+    <!-- 웹캠에서 가져온 영상 스트리밍 (Flask/FastAPI 엔드포인트) -->
+    <img src="/video_feed" width="640" height="480" />
+    <br>
+    
+    <!-- 캡처 버튼 -->
+    <button onclick="captureImage()">캡처</button>
+</body>
+</html>

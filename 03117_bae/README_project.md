@@ -23,7 +23,7 @@
 8. tracking 알고리즘 적용
     - 딥러닝 알고리즘과 동일하게 간단한 정의만 설명 예정
 9. people counting 알고리즘 적용
-
+10. API 적용
 
 
 ## 목차 및 내용
@@ -47,7 +47,13 @@
 
 ### [chapter 9 : people counting 알고리즘 적용](src/chap09_tracking_counting.py)
 
+### [chapter 10 : API 적용](docs/chap10_develop_API.md)
+#### [API 코드 1](src/final_CCTV/server.py)
+#### [API 탬플릿](src/final_CCTV/templates/index.html)
+
 ### [APPENDIX 1 : CUDA 삭제](docs/appendics01.md)
 
 ### [APPENDIX 2 : 듀얼 OS 셋팅](docs/appendics02.md)
+
+### [APPENDIX 3 : API 활용 기법(html, websocket)](docs/appendics03.md)
 

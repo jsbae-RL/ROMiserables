@@ -11,7 +11,7 @@
     - frame t1 = t1번째 시간의 frame, frame t2 = t1번째 시간의 frame  (t1 < t2)
     - 사람은 육안으로 확인했을때, 빨간색 동그라미의 사람이 **회색 상의, 검정색 하의, 묶은 머리 등의 정보를 가지고 동일인물임을 판단**
     - 하지만, 카메라는 0~255 * 3의 픽셀 정보밖에 없기 때문에 이를 어떻게 분석하는지 방법을 모르면 동일인임을 판단하지 못합니다.
-    <center><img src = "./img/track/track1.png" width = "45%" height = "45%"/>
+    <img src = "./img/track/track1.png" width = "45%" height = "45%"/>
 - 따라서, 카메라가 본 객체가 동일한지 안한지 판단하는 알고리즘이 tracking알고리즘입니다.
 
 ## 2) tracking 알고리즘의 활용 이유
