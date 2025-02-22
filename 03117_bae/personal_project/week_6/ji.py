@@ -3,8 +3,24 @@
 # 마지막에 한번에 이용 정지 하면저 정지 메일 발송
 
 def solution(id_list, report, k):
-    answer = []
-    return answer
+    check_email = {name: 0 for name in id_list}
+    get_renum = {name: 0 for name in id_list}
+    report_name = {name: [] for name in id_list}
+
+    report_set = set(report)
+
+    for i in report_set:
+        re_name, get_re = i.split(' ')
+        report_name[re_name].append(get_re)
+        get_renum[get_re] += 1
+
+    for name, count in get_renum.items():
+        if count >= k:
+            for user, check_email_value in report_name.items():
+                if name in check_email_value:
+                    check_email[user] += 1
+
+    return list(check_email.values())
 
 
-solution(["muzi", "frodo", "apeach", "neo"], ["muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"], 2)
+print(solution(["muzi", "frodo", "apeach", "neo"], ["muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"], 2))

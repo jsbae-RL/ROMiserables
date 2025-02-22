@@ -4,7 +4,7 @@ import requests
 import time
 
 def send_webcam():
-    url = "http://127.0.0.1:8000/track_objects"
+    url = "http://192.168.0.9:8000/track_objects"
     cap = cv2.VideoCapture(0)
     while cap.isOpened():
         ret, frame = cap.read()
